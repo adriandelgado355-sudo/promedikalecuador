@@ -3,34 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centro de Especialidades Médicas PROMEDIKAL</title>
+<title>Red Médica PROMEDIKAL | Centro de Especialidades Médicas</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root{
---azul:#0b3c5d;
---verde:#00a859;
---gris:#f4f6f9;
+--azul:#0d2c4f;
+--verde:#009b5e;
+--gris:#f5f7fa;
+--gris-oscuro:#6c757d;
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Poppins', sans-serif;
 }
 
 body{
-color:#333;
+color:#2c3e50;
+background:white;
 }
 
 /* TOP BAR */
 .topbar{
 background:var(--azul);
 color:white;
-padding:10px 40px;
+padding:10px 60px;
 display:flex;
 justify-content:space-between;
 font-size:14px;
@@ -41,131 +44,149 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
+padding:20px 60px;
 background:white;
-box-shadow:0 3px 15px rgba(0,0,0,0.08);
+border-bottom:1px solid #eaeaea;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
 header img{
-height:65px;
+height:70px;
+}
+
+.logo-area small{
+display:block;
+font-size:13px;
+color:var(--gris-oscuro);
+margin-top:5px;
 }
 
 nav a{
-margin-left:25px;
+margin-left:35px;
 text-decoration:none;
 color:var(--azul);
-font-weight:600;
-}
-
-/* SLIDER */
-.slider{
+font-weight:500;
 position:relative;
-height:500px;
-overflow:hidden;
+padding-bottom:5px;
+transition:0.3s;
 }
 
-.slide{
+nav a::after{
+content:'';
 position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:2px;
+background:var(--verde);
+transition:0.3s;
+}
+
+nav a:hover::after{
 width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-animation:fade 18s infinite;
 }
 
-.slide:nth-child(1){
-background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
-animation-delay:0s;
-}
-.slide:nth-child(2){
-background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118');
-animation-delay:6s;
-}
-.slide:nth-child(3){
-background-image:url('https://images.unsplash.com/photo-1580281657527-47b2c00e9c2e');
-animation-delay:12s;
-}
-
-@keyframes fade{
-0%{opacity:0;}
-5%{opacity:1;}
-30%{opacity:1;}
-35%{opacity:0;}
-100%{opacity:0;}
-}
-
-.slider-content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:rgba(11,60,93,0.8);
-color:white;
-padding:40px;
-border-radius:8px;
+/* HERO */
+.hero{
+background: linear-gradient(rgba(13,44,79,0.85), rgba(13,44,79,0.85)),
+url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat;
+height:520px;
+display:flex;
+justify-content:center;
+align-items:center;
 text-align:center;
+color:white;
+padding:20px;
 }
 
-.slider-content h1{
-font-size:38px;
+.hero h1{
+font-size:42px;
+font-weight:600;
 margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px;
+font-weight:300;
 }
 
 .btn{
 background:var(--verde);
 color:white;
-padding:12px 25px;
+padding:14px 28px;
 text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-display:inline-block;
-margin-top:20px;
+border-radius:4px;
+font-weight:500;
+margin:5px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#007a4a;
+}
+
+.btn-outline{
+background:white;
+color:var(--azul);
+padding:14px 28px;
+text-decoration:none;
+border-radius:4px;
+font-weight:500;
+margin:5px;
+transition:0.3s;
+}
+
+.btn-outline:hover{
+background:#f1f1f1;
 }
 
 /* SECCIONES */
 section{
-padding:70px 40px;
+padding:90px 60px;
 text-align:center;
 }
 
 h2{
+font-size:32px;
+margin-bottom:25px;
 color:var(--azul);
-margin-bottom:30px;
-font-size:30px;
+font-weight:600;
 }
 
-/* GRID */
+p{
+color:var(--gris-oscuro);
+}
+
 .grid{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:40px;
 flex-wrap:wrap;
-margin-top:30px;
+margin-top:40px;
 }
 
 .card{
 background:white;
-padding:30px;
-width:280px;
-border-radius:8px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+padding:40px;
+width:300px;
+border-radius:6px;
+box-shadow:0 8px 25px rgba(0,0,0,0.06);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
 }
 
 .card i{
-font-size:40px;
+font-size:42px;
 color:var(--azul);
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
-/* SECCION GRIS */
 .gris{
 background:var(--gris);
 }
@@ -180,50 +201,50 @@ color:white;
 color:white;
 }
 
-.beneficios ul{
-list-style:none;
-}
-
 .beneficios li{
-margin:10px 0;
+margin:12px 0;
 font-size:18px;
 }
 
 /* FOOTER */
 footer{
-background:#021b2b;
+background:#061b30;
 color:white;
-padding:40px;
+padding:60px;
 text-align:center;
 }
 
+/* WHATSAPP */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
 background:var(--verde);
 color:white;
-padding:15px;
+padding:16px;
 border-radius:50%;
-font-size:22px;
+font-size:24px;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
 .topbar{
 flex-direction:column;
 text-align:center;
+gap:5px;
 }
+
 .grid{
 flex-direction:column;
 align-items:center;
 }
-.slider-content h1{
-font-size:24px;
-}
-}
 
+.hero h1{
+font-size:26px;
+}
+}
 </style>
 </head>
 
@@ -235,7 +256,11 @@ font-size:24px;
 </div>
 
 <header>
+<div class="logo-area">
 <img src="logo.png" alt="PROMEDIKAL Logo">
+<small>Red de Servicios Médicos Especializados</small>
+</div>
+
 <nav>
 <a href="#">Inicio</a>
 <a href="#especialidades">Especialidades</a>
@@ -244,24 +269,30 @@ font-size:24px;
 </nav>
 </header>
 
-<div class="slider">
-<div class="slide"></div>
-<div class="slide"></div>
-<div class="slide"></div>
-
-<div class="slider-content">
-<h1>Centro de Especialidades Médicas PROMEDIKAL</h1>
-<p>Servicios médicos especializados con calidad y compromiso</p>
+<section class="hero">
+<div>
+<h1>Red Médica PROMEDIKAL</h1>
+<p>Centro de Especialidades Médicas con enfoque corporativo y ocupacional en Orellana</p>
 <a href="https://wa.me/593962290243" class="btn">Agendar Cita</a>
+<a href="#empresas" class="btn-outline">Ver Paquetes Empresariales</a>
 </div>
-</div>
+</section>
 
 <section>
 <h2>Quiénes Somos</h2>
-<p>Brindamos atención médica especializada en Orellana, con tecnología moderna y un equipo comprometido con la salud y bienestar de nuestros pacientes.</p>
+<p>Brindamos atención médica especializada con tecnología moderna y enfoque corporativo en medicina ocupacional y servicios empresariales.</p>
 </section>
 
-<section id="especialidades" class="gris">
+<section class="gris">
+<h2>Red Médica PROMEDIKAL</h2>
+<div class="grid">
+<div class="card"><h3>Atención Clínica</h3><p>Consultas médicas y diagnósticos especializados.</p></div>
+<div class="card"><h3>Salud Ocupacional</h3><p>Programas de prevención y control empresarial.</p></div>
+<div class="card"><h3>Proyección Regional</h3><p>Alianzas estratégicas en la región amazónica.</p></div>
+</div>
+</section>
+
+<section id="especialidades">
 <h2>Especialidades</h2>
 <div class="grid">
 <div class="card"><i class="fa-solid fa-user-doctor"></i><h3>Medicina General</h3></div>
@@ -270,43 +301,25 @@ font-size:24px;
 </div>
 </section>
 
-<section>
-<h2>Consultas</h2>
-<div class="grid">
-<div class="card"><h3>Consulta Médica General</h3><p>Evaluación integral y diagnóstico clínico.</p></div>
-<div class="card"><h3>Consulta Ocupacional</h3><p>Valoración médica laboral.</p></div>
-<div class="card"><h3>Ecografías Diagnósticas</h3><p>Estudios especializados.</p></div>
-</div>
-</section>
-
 <section id="empresas" class="gris">
 <h2>Paquetes Empresariales</h2>
 <div class="grid">
-<div class="card"><h3>Exámenes Preocupacionales</h3><p>Evaluación médica antes de contratación.</p></div>
-<div class="card"><h3>Exámenes Periódicos</h3><p>Control anual de trabajadores.</p></div>
-<div class="card"><h3>Certificados Médicos Laborales</h3><p>Documentación oficial para empresas.</p></div>
+<div class="card"><h3>Exámenes Preocupacionales</h3></div>
+<div class="card"><h3>Exámenes Periódicos</h3></div>
+<div class="card"><h3>Certificados Médicos Laborales</h3></div>
 </div>
-</section>
-
-<section class="beneficios">
-<h2>¿Por qué elegir PROMEDIKAL?</h2>
-<ul>
-<li>✔ Atención profesional y personalizada</li>
-<li>✔ Equipamiento moderno</li>
-<li>✔ Experiencia en medicina ocupacional</li>
-<li>✔ Confianza y responsabilidad</li>
-</ul>
+<a href="https://wa.me/593962290243" class="btn">Solicitar Cotización Empresarial</a>
 </section>
 
 <section id="contacto">
 <h2>Ubicación</h2>
-<p>Calle Eloy Alfaro y 12 de Febrero - Orellana, Ecuador</p>
-<iframe src="https://www.google.com/maps?q=El+Coca+Orellana+Ecuador&output=embed" width="100%" height="300"></iframe>
+<p>Calle Eloy Alfaro y 12 de Febrero - El Coca, Orellana</p>
+<iframe src="https://www.google.com/maps?q=Calle+Eloy+Alfaro+y+12+de+Febrero+El+Coca+Orellana+Ecuador&output=embed" width="100%" height="350" style="border:0;"></iframe>
 </section>
 
 <footer>
-<p>© 2026 Centro de Especialidades Médicas PROMEDIKAL</p>
-<p>El Coca - Orellana, Ecuador</p>
+<p>© 2026 Red Médica PROMEDIKAL</p>
+<p>Centro de Especialidades Médicas - Orellana, Ecuador</p>
 </footer>
 
 <a href="https://wa.me/593962290243" class="whatsapp-float">
