@@ -3,161 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centro de Especialidades Médicas PROMEDIKAL</title>
+<title>PROMEDIKAL | Centro de Especialidades Médicas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
+
+*{
 margin:0;
-font-family: Arial, Helvetica, sans-serif;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
 background:#f4f9ff;
 color:#333;
 }
 
 header{
-background:#1E88E5;
-color:white;
-padding:20px;
-text-align:center;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-nav{
-background:#1565C0;
-padding:10px;
-text-align:center;
+header img{
+height:60px;
 }
 
 nav a{
-color:white;
+margin-left:25px;
 text-decoration:none;
-margin:15px;
-font-weight:bold;
+color:#1E88E5;
+font-weight:600;
 }
 
 nav a:hover{
-text-decoration:underline;
-}
-
-section{
-padding:50px 20px;
-max-width:1000px;
-margin:auto;
+color:#0D47A1;
 }
 
 .hero{
+height:90vh;
+background:linear-gradient(rgba(30,136,229,0.7),rgba(21,101,192,0.7)),
+url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+color:white;
+padding:20px;
 }
 
 .hero h1{
-color:#1E88E5;
+font-size:40px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px;
 }
 
 .btn{
-display:inline-block;
 background:#25D366;
+padding:15px 30px;
+border-radius:50px;
 color:white;
-padding:15px 25px;
+font-weight:600;
 text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-margin-top:20px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1ebe5d;
+transform:scale(1.05);
+}
+
+section{
+padding:80px 40px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+color:#1E88E5;
+font-size:32px;
 }
 
 .services{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-.service-box{
+.service{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-flex:1 1 250px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.service:hover{
+transform:translateY(-10px);
+}
+
+.service h3{
+margin-bottom:15px;
+color:#1565C0;
+}
+
+.contact{
+background:#1E88E5;
+color:white;
+text-align:center;
+padding:60px 20px;
 }
 
 footer{
-background:#1565C0;
+background:#0D47A1;
 color:white;
 text-align:center;
 padding:20px;
 }
 
-.whatsapp-float{
+.whatsapp{
 position:fixed;
-width:60px;
-height:60px;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
+width:60px;
+height:60px;
 border-radius:50%;
-text-align:center;
-font-size:30px;
-box-shadow:2px 2px 10px rgba(0,0,0,0.3);
-z-index:100;
-}
-
-.whatsapp-float i{
-margin-top:15px;
-display:block;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:white;
+text-decoration:none;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
 @media(max-width:768px){
-.services{
-flex-direction:column;
+.hero h1{
+font-size:28px;
 }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>CENTRO DE ESPECIALIDADES MEDICAS PROMEDIKAL</h1>
-<p>Atención médica confiable y profesional</p>
-</header>
-
+<img src="logo.png" alt="PROMEDIKAL Logo">
 <nav>
 <a href="#inicio">Inicio</a>
 <a href="#nosotros">Nosotros</a>
 <a href="#servicios">Servicios</a>
 <a href="#contacto">Contacto</a>
 </nav>
+</header>
 
-<section id="inicio" class="hero">
+<section class="hero" id="inicio">
 <h1>Cuidamos tu salud con profesionalismo y confianza</h1>
-<p>Atención integral en Orellana, El Coca, Ecuador.</p>
+<p>Centro médico en Orellana, El Coca, Ecuador</p>
 <a class="btn" href="https://wa.me/593962290243?text=Hola,%20quiero%20agendar%20una%20cita%20en%20PROMEDIKAL" target="_blank">
-📲 Agendar Cita por WhatsApp
+Agendar Cita por WhatsApp
 </a>
 </section>
 
 <section id="nosotros">
-<h2>Nosotros</h2>
-<p>
-En Centro de Especialidades Médicas PROMEDIKAL brindamos atención médica integral con un enfoque humano y profesional. 
-Contamos con personal capacitado y equipos adecuados para ofrecer diagnósticos confiables y atención oportuna.
+<h2 class="section-title">Nosotros</h2>
+<p style="text-align:center; max-width:800px; margin:auto;">
+En PROMEDIKAL brindamos atención médica integral con un enfoque humano, tecnología adecuada y profesionales comprometidos con el bienestar de nuestros pacientes.
 </p>
 </section>
 
 <section id="servicios">
-<h2>Servicios</h2>
-
+<h2 class="section-title">Nuestros Servicios</h2>
 <div class="services">
 
-<div class="service-box">
+<div class="service">
 <h3>Medicina General</h3>
 <p>Diagnóstico, tratamiento y control de enfermedades comunes y crónicas.</p>
 </div>
 
-<div class="service-box">
+<div class="service">
 <h3>Ecografía</h3>
-<p>Estudios ecográficos con tecnología adecuada para diagnósticos precisos.</p>
+<p>Estudios ecográficos con tecnología moderna para diagnósticos precisos.</p>
 </div>
 
-<div class="service-box">
+<div class="service">
 <h3>Medicina Ocupacional</h3>
 <p>Evaluaciones médicas laborales y control de salud empresarial.</p>
 </div>
@@ -165,26 +213,18 @@ Contamos con personal capacitado y equipos adecuados para ofrecer diagnósticos 
 </div>
 </section>
 
-<section id="contacto">
+<section class="contact" id="contacto">
 <h2>Contacto</h2>
-<p><strong>Ciudad:</strong> Orellana, El Coca, Ecuador</p>
-<p><strong>Dirección:</strong> Calle Eloy Alfaro y 12 de febrero (a una cuadra de BanEcuador)</p>
-<p><strong>Correo:</strong> promedikal1@hotmail.com</p>
-
-<iframe 
-src="https://www.google.com/maps?q=El+Coca+Ecuador&output=embed" 
-width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
-
+<p>📍 Calle Eloy Alfaro y 12 de febrero, El Coca</p>
+<p>📧 promedikal1@hotmail.com</p>
 </section>
 
 <footer>
-<p>© 2026 Centro de Especialidades Médicas PROMEDIKAL - Todos los derechos reservados</p>
+© 2026 PROMEDIKAL - Centro de Especialidades Médicas
 </footer>
 
-<a href="https://wa.me/593962290243?text=Hola,%20quiero%20agendar%20una%20cita%20en%20PROMEDIKAL" 
-class="whatsapp-float" target="_blank">
-<i>💬</i>
+<a href="https://wa.me/593962290243?text=Hola,%20quiero%20agendar%20una%20cita%20en%20PROMEDIKAL" class="whatsapp" target="_blank">
+💬
 </a>
 
 </body>
