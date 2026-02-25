@@ -9,6 +9,12 @@
 
 <style>
 
+:root{
+--azul:#0b3c5d;
+--verde:#00a859;
+--gris:#f4f6f9;
+}
+
 *{
 margin:0;
 padding:0;
@@ -22,9 +28,9 @@ color:#333;
 
 /* TOP BAR */
 .topbar{
-background:#0a3d62;
+background:var(--azul);
 color:white;
-padding:8px 40px;
+padding:10px 40px;
 display:flex;
 justify-content:space-between;
 font-size:14px;
@@ -37,20 +43,20 @@ justify-content:space-between;
 align-items:center;
 padding:15px 40px;
 background:white;
-box-shadow:0 3px 15px rgba(0,0,0,0.1);
+box-shadow:0 3px 15px rgba(0,0,0,0.08);
 position:sticky;
 top:0;
 z-index:1000;
 }
 
 header img{
-height:60px;
+height:65px;
 }
 
 nav a{
 margin-left:25px;
 text-decoration:none;
-color:#0a3d62;
+color:var(--azul);
 font-weight:600;
 }
 
@@ -67,22 +73,20 @@ width:100%;
 height:100%;
 background-size:cover;
 background-position:center;
-animation:fade 15s infinite;
+animation:fade 18s infinite;
 }
 
 .slide:nth-child(1){
 background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
 animation-delay:0s;
 }
-
 .slide:nth-child(2){
 background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118');
-animation-delay:5s;
+animation-delay:6s;
 }
-
 .slide:nth-child(3){
 background-image:url('https://images.unsplash.com/photo-1580281657527-47b2c00e9c2e');
-animation-delay:10s;
+animation-delay:12s;
 }
 
 @keyframes fade{
@@ -98,11 +102,11 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
+background:rgba(11,60,93,0.8);
 color:white;
+padding:40px;
+border-radius:8px;
 text-align:center;
-background:rgba(0,0,0,0.5);
-padding:30px;
-border-radius:10px;
 }
 
 .slider-content h1{
@@ -111,14 +115,14 @@ margin-bottom:15px;
 }
 
 .btn{
-background:#25D366;
+background:var(--verde);
 color:white;
 padding:12px 25px;
 text-decoration:none;
 border-radius:5px;
 font-weight:bold;
 display:inline-block;
-margin-top:15px;
+margin-top:20px;
 }
 
 /* SECCIONES */
@@ -128,63 +132,61 @@ text-align:center;
 }
 
 h2{
-color:#0a3d62;
-margin-bottom:20px;
+color:var(--azul);
+margin-bottom:30px;
 font-size:30px;
 }
 
-/* SERVICIOS */
-.servicios{
-background:#f5f7fa;
-}
-
-.cards{
+/* GRID */
+.grid{
 display:flex;
 justify-content:center;
 gap:30px;
 flex-wrap:wrap;
-margin-top:40px;
+margin-top:30px;
 }
 
 .card{
 background:white;
 padding:30px;
 width:280px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border-radius:8px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
 }
 
 .card i{
 font-size:40px;
-color:#0a3d62;
+color:var(--azul);
 margin-bottom:15px;
+}
+
+/* SECCION GRIS */
+.gris{
+background:var(--gris);
 }
 
 /* BENEFICIOS */
 .beneficios{
-background:#0a3d62;
+background:var(--azul);
+color:white;
+}
+
+.beneficios h2{
 color:white;
 }
 
 .beneficios ul{
 list-style:none;
-margin-top:20px;
 }
 
 .beneficios li{
 margin:10px 0;
 font-size:18px;
-}
-
-/* MAPA */
-iframe{
-border-radius:10px;
-margin-top:20px;
 }
 
 /* FOOTER */
@@ -199,7 +201,7 @@ text-align:center;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25D366;
+background:var(--verde);
 color:white;
 padding:15px;
 border-radius:50%;
@@ -209,22 +211,17 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 @media(max-width:768px){
-
 .topbar{
 flex-direction:column;
 text-align:center;
-gap:5px;
 }
-
-.cards{
+.grid{
 flex-direction:column;
 align-items:center;
 }
-
 .slider-content h1{
 font-size:24px;
 }
-
 }
 
 </style>
@@ -241,7 +238,8 @@ font-size:24px;
 <img src="logo.png" alt="PROMEDIKAL Logo">
 <nav>
 <a href="#">Inicio</a>
-<a href="#servicios">Servicios</a>
+<a href="#especialidades">Especialidades</a>
+<a href="#empresas">Empresas</a>
 <a href="#contacto">Contacto</a>
 </nav>
 </header>
@@ -253,39 +251,40 @@ font-size:24px;
 
 <div class="slider-content">
 <h1>Centro de Especialidades Médicas PROMEDIKAL</h1>
-<p>Salud con calidad, confianza y compromiso en El Coca</p>
+<p>Servicios médicos especializados con calidad y compromiso</p>
 <a href="https://wa.me/593962290243" class="btn">Agendar Cita</a>
 </div>
 </div>
 
 <section>
 <h2>Quiénes Somos</h2>
-<p>Somos un centro médico comprometido con brindar atención profesional y servicios de diagnóstico con tecnología moderna, garantizando calidad y confianza a nuestros pacientes en Orellana.</p>
+<p>Brindamos atención médica especializada en Orellana, con tecnología moderna y un equipo comprometido con la salud y bienestar de nuestros pacientes.</p>
 </section>
 
-<section id="servicios" class="servicios">
-<h2>Nuestros Servicios</h2>
-
-<div class="cards">
-
-<div class="card">
-<i class="fa-solid fa-user-doctor"></i>
-<h3>Medicina General</h3>
-<p>Atención integral para niños y adultos.</p>
+<section id="especialidades" class="gris">
+<h2>Especialidades</h2>
+<div class="grid">
+<div class="card"><i class="fa-solid fa-user-doctor"></i><h3>Medicina General</h3></div>
+<div class="card"><i class="fa-solid fa-heart-pulse"></i><h3>Ecografía</h3></div>
+<div class="card"><i class="fa-solid fa-briefcase-medical"></i><h3>Medicina Ocupacional</h3></div>
 </div>
+</section>
 
-<div class="card">
-<i class="fa-solid fa-heart-pulse"></i>
-<h3>Ecografía</h3>
-<p>Estudios ecográficos con equipos modernos.</p>
+<section>
+<h2>Consultas</h2>
+<div class="grid">
+<div class="card"><h3>Consulta Médica General</h3><p>Evaluación integral y diagnóstico clínico.</p></div>
+<div class="card"><h3>Consulta Ocupacional</h3><p>Valoración médica laboral.</p></div>
+<div class="card"><h3>Ecografías Diagnósticas</h3><p>Estudios especializados.</p></div>
 </div>
+</section>
 
-<div class="card">
-<i class="fa-solid fa-briefcase-medical"></i>
-<h3>Medicina Ocupacional</h3>
-<p>Exámenes médicos laborales y certificados.</p>
-</div>
-
+<section id="empresas" class="gris">
+<h2>Paquetes Empresariales</h2>
+<div class="grid">
+<div class="card"><h3>Exámenes Preocupacionales</h3><p>Evaluación médica antes de contratación.</p></div>
+<div class="card"><h3>Exámenes Periódicos</h3><p>Control anual de trabajadores.</p></div>
+<div class="card"><h3>Certificados Médicos Laborales</h3><p>Documentación oficial para empresas.</p></div>
 </div>
 </section>
 
@@ -293,21 +292,21 @@ font-size:24px;
 <h2>¿Por qué elegir PROMEDIKAL?</h2>
 <ul>
 <li>✔ Atención profesional y personalizada</li>
-<li>✔ Tecnología moderna</li>
-<li>✔ Resultados confiables</li>
-<li>✔ Ubicación estratégica en El Coca</li>
+<li>✔ Equipamiento moderno</li>
+<li>✔ Experiencia en medicina ocupacional</li>
+<li>✔ Confianza y responsabilidad</li>
 </ul>
 </section>
 
 <section id="contacto">
-<h2>Encuéntranos</h2>
+<h2>Ubicación</h2>
 <p>Calle Eloy Alfaro y 12 de Febrero - Orellana, Ecuador</p>
 <iframe src="https://www.google.com/maps?q=El+Coca+Orellana+Ecuador&output=embed" width="100%" height="300"></iframe>
 </section>
 
 <footer>
 <p>© 2026 Centro de Especialidades Médicas PROMEDIKAL</p>
-<p>Orellana - El Coca, Ecuador</p>
+<p>El Coca - Orellana, Ecuador</p>
 </footer>
 
 <a href="https://wa.me/593962290243" class="whatsapp-float">
