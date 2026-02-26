@@ -3,64 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Médica PROMEDIKAL | Centro de Especialidades Médicas</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Centro de Especialidades Médicas PROMEDIKAL</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root{
---azul:#0d2c4f;
---verde:#009b5e;
---gris:#f5f7fa;
---gris-oscuro:#6c757d;
+--azul:#0c3c60;
+--verde:#00a859;
+--gris:#f4f6f8;
+--gris-oscuro:#555;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins', sans-serif;
+html{
+scroll-behavior:smooth;
 }
 
 body{
-color:#2c3e50;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:#333;
 background:white;
 }
 
-/* TOP BAR */
-.topbar{
-background:var(--azul);
-color:white;
-padding:10px 60px;
-display:flex;
-justify-content:space-between;
-font-size:14px;
-}
-
-/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:15px 8%;
 background:white;
-border-bottom:1px solid #eaeaea;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
-z-index:1000;
+z-index:100;
 }
 
 header img{
-height:70px;
-}
-
-.logo-area small{
-display:block;
-font-size:13px;
-color:var(--gris-oscuro);
-margin-top:5px;
+height:60px;
 }
 
 nav a{
@@ -88,243 +66,298 @@ nav a:hover::after{
 width:100%;
 }
 
-/* HERO */
 .hero{
-background: linear-gradient(rgba(13,44,79,0.85), rgba(13,44,79,0.85)),
-url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat;
-height:520px;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
+background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat;
 color:white;
-padding:20px;
+text-align:center;
+padding:120px 20px;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(12,60,96,0.75);
+}
+
+.hero-contenido{
+position:relative;
+z-index:2;
+}
+
+.subtitulo-hero{
+display:inline-block;
+background:rgba(255,255,255,0.15);
+padding:8px 20px;
+border-radius:30px;
+font-size:14px;
+margin-bottom:15px;
+color:white;
 }
 
 .hero h1{
-font-size:42px;
-font-weight:600;
+font-size:40px;
 margin-bottom:15px;
 }
 
 .hero p{
+max-width:700px;
+margin:auto;
+margin-bottom:25px;
 font-size:18px;
-margin-bottom:30px;
-font-weight:300;
 }
 
-.btn{
+.btn-principal{
 background:var(--verde);
 color:white;
 padding:14px 28px;
+border-radius:30px;
 text-decoration:none;
-border-radius:4px;
-font-weight:500;
-margin:5px;
-transition:0.3s;
+font-weight:bold;
 }
 
-.btn:hover{
-background:#007a4a;
-}
-
-.btn-outline{
-background:white;
-color:var(--azul);
-padding:14px 28px;
-text-decoration:none;
-border-radius:4px;
-font-weight:500;
-margin:5px;
-transition:0.3s;
-}
-
-.btn-outline:hover{
-background:#f1f1f1;
-}
-
-/* SECCIONES */
 section{
-padding:90px 60px;
+padding:70px 8%;
 text-align:center;
-}
-
-h2{
-font-size:32px;
-margin-bottom:25px;
-color:var(--azul);
-font-weight:600;
-}
-
-p{
-color:var(--gris-oscuro);
-}
-
-.grid{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.card{
-background:white;
-padding:40px;
-width:300px;
-border-radius:6px;
-box-shadow:0 8px 25px rgba(0,0,0,0.06);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card i{
-font-size:42px;
-color:var(--azul);
-margin-bottom:20px;
 }
 
 .gris{
 background:var(--gris);
 }
 
-/* BENEFICIOS */
-.beneficios{
-background:var(--azul);
-color:white;
-}
-
-.beneficios h2{
-color:white;
-}
-
-.beneficios li{
-margin:12px 0;
-font-size:18px;
-}
-
-/* FOOTER */
-footer{
-background:#061b30;
-color:white;
-padding:60px;
-text-align:center;
-}
-
-/* WHATSAPP */
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:var(--verde);
-color:white;
-padding:16px;
-border-radius:50%;
-font-size:24px;
-text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.topbar{
-flex-direction:column;
-text-align:center;
-gap:5px;
+h2{
+color:var(--azul);
+margin-bottom:30px;
 }
 
 .grid{
-flex-direction:column;
-align-items:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
-.hero h1{
-font-size:26px;
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
 }
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
+
+#empresas .card{
+border-top:4px solid var(--verde);
+}
+
+.btn-combo{
+background:var(--azul);
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin-top:15px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-combo:hover{
+background:var(--verde);
+}
+
+.modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+background:white;
+margin:8% auto;
+padding:40px;
+width:90%;
+max-width:600px;
+border-radius:15px;
+}
+
+.modal-content ul{
+text-align:left;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.cerrar{
+float:right;
+font-size:28px;
+cursor:pointer;
+}
+
+.btn-wsp{
+background:var(--verde);
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+footer{
+background:var(--azul);
+color:white;
+text-align:center;
+padding:20px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-<div>📍 Calle Eloy Alfaro y 12 de Febrero - El Coca</div>
-<div>📞 096 229 0243 | 📧 promedikal1@hotmail.com</div>
-</div>
-
 <header>
-<div class="logo-area">
+<div>
 <img src="logo.png" alt="PROMEDIKAL Logo">
-<small>Red de Servicios Médicos Especializados</small>
+<div style="font-size:13px;color:var(--gris-oscuro);">
+Centro de Especialidades Médicas
+</div>
 </div>
 
 <nav>
 <a href="#">Inicio</a>
-<a href="#especialidades">Especialidades</a>
+<a href="#especialidades">Servicios</a>
 <a href="#empresas">Empresas</a>
 <a href="#contacto">Contacto</a>
 </nav>
 </header>
 
 <section class="hero">
-<div>
-<h1>Red Médica PROMEDIKAL</h1>
-<p>Centro de Especialidades Médicas con enfoque corporativo y ocupacional en Orellana</p>
-<a href="https://wa.me/593962290243" class="btn">Agendar Cita</a>
-<a href="#empresas" class="btn-outline">Ver Paquetes Empresariales</a>
-</div>
-</section>
+<div class="hero-contenido">
 
-<section>
-<h2>Quiénes Somos</h2>
-<p>Brindamos atención médica especializada con tecnología moderna y enfoque corporativo en medicina ocupacional y servicios empresariales.</p>
-</section>
+<span class="subtitulo-hero">
+Especialistas en Salud Ocupacional Empresarial en Orellana
+</span>
 
-<section class="gris">
-<h2>Red Médica PROMEDIKAL</h2>
-<div class="grid">
-<div class="card"><h3>Atención Clínica</h3><p>Consultas médicas y diagnósticos especializados.</p></div>
-<div class="card"><h3>Salud Ocupacional</h3><p>Programas de prevención y control empresarial.</p></div>
-<div class="card"><h3>Proyección Regional</h3><p>Alianzas estratégicas en la región amazónica.</p></div>
+<h1>Centro de Especialidades Médicas PROMEDIKAL</h1>
+
+<p>
+Servicios clínicos y ocupacionales con infraestructura moderna,
+unidad móvil ambulatoria y paquetes diseñados para empresas.
+</p>
+
+<a href="#empresas" class="btn-principal">
+Ver Paquetes Empresariales
+</a>
+
 </div>
 </section>
 
 <section id="especialidades">
-<h2>Especialidades</h2>
+<h2>Servicios Médicos</h2>
+
 <div class="grid">
-<div class="card"><i class="fa-solid fa-user-doctor"></i><h3>Medicina General</h3></div>
-<div class="card"><i class="fa-solid fa-heart-pulse"></i><h3>Ecografía</h3></div>
-<div class="card"><i class="fa-solid fa-briefcase-medical"></i><h3>Medicina Ocupacional</h3></div>
+
+<div class="card">
+<h3>Consulta Médica General</h3>
+<p>Atención integral para diagnóstico y tratamiento clínico.</p>
+</div>
+
+<div class="card">
+<h3>Medicina Ocupacional</h3>
+<p>Evaluaciones pre ocupacionales, periódicas y de retiro laboral.</p>
+</div>
+
+<div class="card">
+<h3>Laboratorio Clínico</h3>
+<p>Exámenes hematológicos y bioquímicos ocupacionales.</p>
+</div>
+
+<div class="card">
+<h3>Radiografía Digital</h3>
+<p>Estudios radiológicos con interpretación profesional.</p>
+</div>
+
+<div class="card">
+<h3>Espirometría</h3>
+<p>Evaluación de función pulmonar ocupacional.</p>
+</div>
+
+<div class="card">
+<h3>Certificados Médicos</h3>
+<p>Certificación de aptitud laboral.</p>
+</div>
+
 </div>
 </section>
 
 <section id="empresas" class="gris">
-<h2>Paquetes Empresariales</h2>
+<h2>Paquetes Empresariales de Salud Ocupacional</h2>
+
 <div class="grid">
-<div class="card"><h3>Exámenes Preocupacionales</h3></div>
-<div class="card"><h3>Exámenes Periódicos</h3></div>
-<div class="card"><h3>Certificados Médicos Laborales</h3></div>
+
+<div class="card">
+<h3>Riesgo Musculoesquelético</h3>
+<button onclick="abrirModal('modal1')" class="btn-combo">
+Ver Detalle
+</button>
 </div>
-<a href="https://wa.me/593962290243" class="btn">Solicitar Cotización Empresarial</a>
+
+<div class="card">
+<h3>Riesgo Químico</h3>
+<button onclick="abrirModal('modal2')" class="btn-combo">
+Ver Detalle
+</button>
+</div>
+
+<div class="card">
+<h3>Riesgo Psicosocial</h3>
+<button onclick="abrirModal('modal3')" class="btn-combo">
+Ver Detalle
+</button>
+</div>
+
+</div>
 </section>
 
-<section id="contacto">
-<h2>Ubicación</h2>
-<p>Calle Eloy Alfaro y 12 de Febrero - El Coca, Orellana</p>
-<iframe src="https://www.google.com/maps?q=Calle+Eloy+Alfaro+y+12+de+Febrero+El+Coca+Orellana+Ecuador&output=embed" width="100%" height="350" style="border:0;"></iframe>
+<section class="gris">
+<h2>Unidad Móvil Ambulatoria</h2>
+<p>Brindamos atención médica empresarial directamente en campo.</p>
 </section>
 
-<footer>
-<p>© 2026 Red Médica PROMEDIKAL</p>
-<p>Centro de Especialidades Médicas - Orellana, Ecuador</p>
+<footer id="contacto">
+<p>Centro de Especialidades Médicas PROMEDIKAL</p>
+<p>Orellana - Ecuador</p>
+<p>WhatsApp: 593962290243</p>
 </footer>
 
-<a href="https://wa.me/593962290243" class="whatsapp-float">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
+<script>
+function abrirModal(id){
+document.getElementById(id).style.display="block";
+}
+function cerrarModal(id){
+document.getElementById(id).style.display="none";
+}
+window.onclick=function(event){
+var modales=document.getElementsByClassName("modal");
+for(var i=0;i<modales.length;i++){
+if(event.target==modales[i]){
+modales[i].style.display="none";
+}
+}
+}
+</script>
 
 </body>
 </html>
