@@ -3,300 +3,899 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Salud Ocupacional en Orellana | Centro Médico PROMEDIKAL</title>
-
 <meta name="description" content="Centro de Especialidades Médicas PROMEDIKAL en Orellana. Servicios de salud ocupacional, exámenes pre ocupacionales, certificados médicos, laboratorio clínico y unidad móvil empresarial.">
+<meta name="keywords" content="salud ocupacional, exámenes pre ocupacionales, Orellana, centro médico, PROMEDIKAL">
+<meta name="author" content="PROMEDIKAL">
+
+<!-- Font Awesome para iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-
-:root{
---azul:#0c3c60;
---verde:#00a859;
---gris:#f4f6f8;
---gris-oscuro:#555;
+:root {
+    --azul: #0c3c60;
+    --verde: #00a859;
+    --gris: #f4f6f8;
+    --gris-oscuro: #555;
+    --blanco: #ffffff;
+    --sombra: 0 8px 20px rgba(0,0,0,0.08);
+    --sombra-hover: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-html{
-scroll-behavior:smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-color:#333;
-background:white;
+html {
+    scroll-behavior: smooth;
 }
 
-/* HEADER MÁS ELEGANTE */
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:white;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:100;
-border-bottom:3px solid var(--verde);
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: var(--blanco);
 }
 
-header img{
-height:95px;
+/* HEADER MEJORADO */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--verde);
 }
 
-nav a{
-margin-left:35px;
-text-decoration:none;
-color:var(--azul);
-font-weight:600;
-position:relative;
-padding-bottom:5px;
-transition:0.3s;
+.logo-container {
+    display: flex;
+    flex-direction: column;
 }
 
-nav a::after{
-content:'';
-position:absolute;
-left:0;
-bottom:0;
-width:0%;
-height:2px;
-background:var(--verde);
-transition:0.3s;
+.logo-container img {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s;
 }
 
-nav a:hover::after{
-width:100%;
+.logo-container img:hover {
+    transform: scale(1.05);
 }
 
-/* HERO */
-
-.hero{
-background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat;
-color:white;
-text-align:center;
-padding:120px 20px;
-position:relative;
+.logo-tagline {
+    font-size: 12px;
+    color: var(--gris-oscuro);
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-.hero::before{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(12,60,96,0.80);
+/* Navegación mejorada */
+nav {
+    display: flex;
+    gap: 30px;
 }
 
-.hero-contenido{
-position:relative;
-z-index:2;
+nav a {
+    text-decoration: none;
+    color: var(--azul);
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
 }
 
-.subtitulo-hero{
-display:inline-block;
-background:rgba(255,255,255,0.15);
-padding:8px 20px;
-border-radius:30px;
-font-size:14px;
-margin-bottom:15px;
-color:white;
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--verde);
+    transition: width 0.3s ease;
 }
 
-.hero h1{
-font-size:42px;
-margin-bottom:15px;
+nav a:hover {
+    color: var(--verde);
 }
 
-.hero p{
-max-width:700px;
-margin:auto;
-margin-bottom:25px;
-font-size:18px;
+nav a:hover::after {
+    width: 100%;
 }
 
-.btn-principal{
-background:var(--verde);
-color:white;
-padding:14px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
+/* HERO MEJORADO */
+.hero {
+    background: linear-gradient(rgba(12, 60, 96, 0.85), rgba(12, 60, 96, 0.85)), 
+                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat fixed;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
 }
 
-/* SECCIONES */
-
-section{
-padding:70px 8%;
-text-align:center;
+.hero-contenido {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.gris{
-background:var(--gris);
+.hero .subtitulo-hero {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-h2{
-color:var(--azul);
-margin-bottom:30px;
+.hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+.hero p {
+    font-size: clamp(16px, 2vw, 18px);
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:0.3s;
+.btn-principal {
+    display: inline-block;
+    background: var(--verde);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
 }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 12px 30px rgba(0,0,0,0.15);
+.btn-principal:hover {
+    background: transparent;
+    border-color: var(--verde);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,168,89,0.3);
 }
 
-#empresas .card{
-border-top:4px solid var(--verde);
+.btn-secundario {
+    display: inline-block;
+    background: transparent;
+    color: var(--azul);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--verde);
+    transition: all 0.3s;
+    margin-top: 20px;
 }
 
-/* FOOTER */
-
-footer{
-background:var(--azul);
-color:white;
-text-align:center;
-padding:30px;
-line-height:1.6;
+.btn-secundario:hover {
+    background: var(--verde);
+    color: white;
+    transform: translateY(-3px);
 }
 
-/* BOTÓN WHATSAPP FLOTANTE */
-
-.whatsapp-float{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-z-index:999;
+/* SECCIONES MEJORADAS */
+section {
+    padding: 80px 8%;
+    text-align: center;
 }
 
-.whatsapp-float img{
-width:100%;
-height:100%;
+section h2 {
+    color: var(--azul);
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
 }
 
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--verde);
+}
+
+.section-descripcion {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--gris-oscuro);
+    font-size: 18px;
+}
+
+.gris {
+    background: var(--gris);
+}
+
+/* GRID MEJORADO */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    transition: all 0.3s;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-hover);
+}
+
+.card i {
+    font-size: 3em;
+    color: var(--verde);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--azul);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.card p {
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+}
+
+.card-empresa {
+    border-top: 4px solid var(--verde);
+}
+
+/* CARACTERÍSTICAS */
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.caracteristica-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.caracteristica-item:hover {
+    transform: translateY(-5px);
+}
+
+.caracteristica-item i {
+    font-size: 2.5em;
+    color: var(--verde);
+    margin-bottom: 15px;
+}
+
+.caracteristica-item h4 {
+    color: var(--azul);
+    margin-bottom: 10px;
+}
+
+/* HORARIOS */
+.horarios {
+    max-width: 600px;
+    margin: 30px auto 0;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.horario-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.horario-item:last-child {
+    border-bottom: none;
+}
+
+.horario-item .dias {
+    font-weight: 600;
+    color: var(--azul);
+}
+
+.horario-item .hora {
+    color: var(--verde);
+    font-weight: 500;
+}
+
+/* CONTACTO SECTION */
+.contacto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contacto-info {
+    text-align: left;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s;
+}
+
+.contacto-item:hover {
+    transform: translateX(5px);
+}
+
+.contacto-item i {
+    font-size: 1.5em;
+    color: var(--verde);
+    width: 30px;
+    text-align: center;
+}
+
+.contacto-item .texto h4 {
+    color: var(--azul);
+    margin-bottom: 5px;
+}
+
+.contacto-item .texto p {
+    color: var(--gris-oscuro);
+}
+
+.contacto-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--verde);
+}
+
+.btn-enviar {
+    background: var(--verde);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background: var(--azul);
+    transform: translateY(-3px);
+}
+
+/* MAPA */
+.mapa-container {
+    margin-top: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+/* FOOTER MEJORADO */
+footer {
+    background: var(--azul);
+    color: white;
+    padding: 60px 8% 20px;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.footer-col h3 {
+    color: var(--verde);
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.footer-col i {
+    margin-right: 10px;
+    color: var(--verde);
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--verde);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--verde);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* BOTÓN WHATSAPP FLOTANTE MEJORADO */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s;
+    z-index: 999;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float i {
+    font-size: 2.5em;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    nav {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero {
+        padding: 80px 15px;
+    }
+    
+    section {
+        padding: 50px 15px;
+    }
+    
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float i {
+        font-size: 1.8em;
+    }
+    
+    .contacto-container {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div>
-<img src="logo.png" alt="PROMEDIKAL Logo">
-<div style="font-size:14px;color:var(--gris-oscuro);font-weight:500;">
-Centro de Especialidades Médicas
-</div>
-</div>
+    <div class="logo-container">
+        <img src="https://via.placeholder.com/200x70/0c3c60/ffffff?text=PROMEDIKAL" alt="PROMEDIKAL Logo">
+        <span class="logo-tagline">Centro de Especialidades Médicas</span>
+    </div>
 
-<nav>
-<a href="#">Inicio</a>
-<a href="#especialidades">Servicios</a>
-<a href="#empresas">Empresas</a>
-<a href="#contacto">Contacto</a>
-</nav>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#especialidades">Servicios</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#unidad-movil">Unidad Móvil</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 </header>
 
-<section class="hero">
-<div class="hero-contenido">
+<section id="inicio" class="hero">
+    <div class="hero-contenido">
+        <span class="subtitulo-hero">
+            <i class="fas fa-shield-alt"></i> Especialistas en Salud Ocupacional en Orellana
+        </span>
 
-<span class="subtitulo-hero">
-Especialistas en Salud Ocupacional Empresarial en Orellana
-</span>
+        <h1>Centro de Especialidades Médicas PROMEDIKAL</h1>
 
-<h1>Centro de Especialidades Médicas PROMEDIKAL</h1>
+        <p>
+            Servicios clínicos y ocupacionales con infraestructura moderna,
+            unidad móvil ambulatoria y paquetes diseñados para empresas.
+        </p>
 
-<p>
-Servicios clínicos y ocupacionales con infraestructura moderna,
-unidad móvil ambulatoria y paquetes diseñados para empresas.
-</p>
-
-<a href="#empresas" class="btn-principal">
-Ver Paquetes Empresariales
-</a>
-
-</div>
+        <a href="#empresas" class="btn-principal">
+            <i class="fas fa-briefcase"></i> Ver Paquetes Empresariales
+        </a>
+    </div>
 </section>
 
 <section id="especialidades">
-<h2>Servicios Médicos</h2>
+    <h2>Nuestros Servicios Médicos</h2>
+    <p class="section-descripcion">
+        Ofrecemos atención médica integral con profesionales capacitados y equipamiento de última generación
+    </p>
 
-<div class="grid">
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-stethoscope"></i>
+            <h3>Consulta Médica General</h3>
+            <p>Atención integral para diagnóstico y tratamiento clínico con médicos especialistas.</p>
+        </div>
 
-<div class="card">
-<h3>Consulta Médica General</h3>
-<p>Atención integral para diagnóstico y tratamiento clínico.</p>
-</div>
+        <div class="card">
+            <i class="fas fa-briefcase-medical"></i>
+            <h3>Medicina Ocupacional</h3>
+            <p>Evaluaciones pre ocupacionales, periódicas y de retiro laboral según normativa vigente.</p>
+        </div>
 
-<div class="card">
-<h3>Medicina Ocupacional</h3>
-<p>Evaluaciones pre ocupacionales, periódicas y de retiro laboral.</p>
-</div>
+        <div class="card">
+            <i class="fas fa-flask"></i>
+            <h3>Laboratorio Clínico</h3>
+            <p>Exámenes hematológicos, bioquímicos y pruebas especializadas ocupacionales.</p>
+        </div>
 
-<div class="card">
-<h3>Laboratorio Clínico</h3>
-<p>Exámenes hematológicos y bioquímicos ocupacionales.</p>
-</div>
+        <div class="card">
+            <i class="fas fa-x-ray"></i>
+            <h3>Radiografía Digital</h3>
+            <p>Estudios radiológicos digitales con interpretación profesional inmediata.</p>
+        </div>
 
-<div class="card">
-<h3>Radiografía Digital</h3>
-<p>Estudios radiológicos con interpretación profesional.</p>
-</div>
+        <div class="card">
+            <i class="fas fa-lungs"></i>
+            <h3>Espirometría</h3>
+            <p>Evaluación precisa de función pulmonar para certificación ocupacional.</p>
+        </div>
 
-<div class="card">
-<h3>Espirometría</h3>
-<p>Evaluación de función pulmonar ocupacional.</p>
-</div>
-
-<div class="card">
-<h3>Certificados Médicos</h3>
-<p>Certificación de aptitud laboral.</p>
-</div>
-
-</div>
+        <div class="card">
+            <i class="fas fa-file-medical"></i>
+            <h3>Certificados Médicos</h3>
+            <p>Certificación de aptitud laboral con validez oficial y entrega inmediata.</p>
+        </div>
+    </div>
 </section>
 
 <section id="empresas" class="gris">
-<h2>Paquetes Empresariales de Salud Ocupacional</h2>
-<p>Soluciones integrales para cumplimiento normativo empresarial.</p>
+    <h2>Paquetes Empresariales de Salud Ocupacional</h2>
+    <p class="section-descripcion">
+        Soluciones integrales diseñadas para empresas que cumplen con la normativa legal ecuatoriana
+    </p>
+
+    <div class="grid">
+        <div class="card card-empresa">
+            <i class="fas fa-user-check"></i>
+            <h3>Exámenes Pre Ocupacionales</h3>
+            <p>Evaluación completa para nuevos colaboradores según el puesto de trabajo.</p>
+            <ul style="list-style: none; margin-top: 20px; text-align: left;">
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Evaluación médica</li>
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Exámenes de laboratorio</li>
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Certificado de aptitud</li>
+            </ul>
+        </div>
+
+        <div class="card card-empresa">
+            <i class="fas fa-calendar-check"></i>
+            <h3>Exámenes Periódicos</h3>
+            <p>Seguimiento continuo de la salud de tus colaboradores.</p>
+            <ul style="list-style: none; margin-top: 20px; text-align: left;">
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Control anual obligatorio</li>
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Detección temprana</li>
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Informes gerenciales</li>
+            </ul>
+        </div>
+
+        <div class="card card-empresa">
+            <i class="fas fa-truck-medical"></i>
+            <h3>Unidad Móvil Empresarial</h3>
+            <p>Atención in situ en tus instalaciones, sin interrumpir operaciones.</p>
+            <ul style="list-style: none; margin-top: 20px; text-align: left;">
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Equipo portátil</li>
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Resultados inmediatos</li>
+                <li><i class="fas fa-check" style="color: var(--verde);"></i> Cobertura provincial</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="#contacto" class="btn-secundario">
+        <i class="fas fa-file-contract"></i> Solicitar Cotización Empresarial
+    </a>
 </section>
 
-<section class="gris">
-<h2>Unidad Móvil Ambulatoria</h2>
-<p>Atención médica empresarial directamente en campo en Orellana y alrededores.</p>
+<section id="unidad-movil">
+    <h2>Unidad Móvil Ambulatoria</h2>
+    <p class="section-descripcion">
+        Atención médica empresarial directamente en campo en Orellana y alrededores
+    </p>
+
+    <div class="caracteristicas-grid">
+        <div class="caracteristica-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Cobertura Regional</h4>
+            <p>Atendemos en toda la provincia de Orellana y zonas cercanas</p>
+        </div>
+
+        <div class="caracteristica-item">
+            <i class="fas fa-clock"></i>
+            <h4>Flexibilidad Horaria</h4>
+            <p>Adaptamos nuestros horarios a las necesidades de tu empresa</p>
+        </div>
+
+        <div class="caracteristica-item">
+            <i class="fas fa-microscope"></i>
+            <h4>Equipamiento Completo</h4>
+            <p>Laboratorio móvil con capacidad para exámenes diversos</p>
+        </div>
+
+        <div class="caracteristica-item">
+            <i class="fas fa-users"></i>
+            <h4>Atención Masiva</h4>
+            <p>Capacidad para evaluar grandes grupos de colaboradores</p>
+        </div>
+    </div>
 </section>
 
-<footer id="contacto">
-<p><strong>Centro de Especialidades Médicas PROMEDIKAL</strong></p>
-<p>Salud Ocupacional en Orellana - Ecuador</p>
-<p>Unidad Móvil Ambulatoria disponible</p>
-<p>WhatsApp: 593962290243</p>
+<section id="contacto" class="gris">
+    <h2>Contacto y Ubicación</h2>
+    <p class="section-descripcion">
+        Estamos para servirle. Contáctenos para agendar una cita o solicitar información
+    </p>
+
+    <div class="contacto-container">
+        <div class="contacto-info">
+            <div class="contacto-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="texto">
+                    <h4>Dirección</h4>
+                    <p>Av. Principal y Calle Secundaria<br>Orellana, Ecuador</p>
+                </div>
+            </div>
+
+            <div class="contacto-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="texto">
+                    <h4>Teléfono</h4>
+                    <p>(06) 1234-567</p>
+                </div>
+            </div>
+
+            <div class="contacto-item">
+                <i class="fab fa-whatsapp"></i>
+                <div class="texto">
+                    <h4>WhatsApp</h4>
+                    <p>+593 96 229 0243</p>
+                </div>
+            </div>
+
+            <div class="contacto-item">
+                <i class="fas fa-envelope"></i>
+                <div class="texto">
+                    <h4>Email</h4>
+                    <p>info@promedikal.ec</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contacto-form">
+            <h3 style="color: var(--azul); margin-bottom: 20px;">Envíenos su consulta</h3>
+            <form id="form-contacto">
+                <div class="form-group">
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email corporativo" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Tipo de consulta</option>
+                        <option value="empresa">Servicios empresariales</option>
+                        <option value="cita">Agendar cita</option>
+                        <option value="informacion">Información general</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Mensaje"></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">
+                    <i class="fas fa-paper-plane"></i> Enviar mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="horarios">
+        <h3 style="color: var(--azul); margin-bottom: 25px;">Horario de Atención</h3>
+        <div class="horario-item">
+            <span class="dias"><i class="far fa-calendar-alt"></i> Lunes a Viernes</span>
+            <span class="hora">08:00 - 18:00</span>
+        </div>
+        <div class="horario-item">
+            <span class="dias"><i class="far fa-calendar-alt"></i> Sábados</span>
+            <span class="hora">09:00 - 13:00</span>
+        </div>
+        <div class="horario-item">
+            <span class="dias"><i class="far fa-calendar-alt"></i> Domingos</span>
+            <span class="hora">Emergencias</span>
+        </div>
+    </div>
+
+    <div class="mapa-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.792704349097!2d-76.981287!3d-0.462123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjcnNDMuNiJTIDc2wrA1OCc1Mi42Ilc!5e0!3m2!1ses!2sec!4v1620000000000!5m2!1ses!2sec" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-contenido">
+        <div class="footer-col">
+            <h3>PROMEDIKAL</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Orellana, Ecuador</p>
+            <p><i class="fas fa-phone"></i> (06) 1234-567</p>
+            <p><i class="fab fa-whatsapp"></i> +593 96 229 0243</p>
+            <p><i class="fas fa-envelope"></i> info@promedikal.ec</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Enlaces Rápidos</h3>
+            <p><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></p>
+            <p><a href="#especialidades"><i class="fas fa-chevron-right"></i> Servicios</a></p>
+            <p><a href="#empresas"><i class="fas fa-chevron-right"></i> Empresas</a></p>
+            <p><a href="#contacto"><i class="fas fa-chevron-right"></i> Contacto</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Horario</h3>
+            <p><i class="far fa-clock"></i> Lun-Vie: 8am - 6pm</p>
+            <p><i class="far fa-clock"></i> Sáb: 9am - 1pm</p>
+            <p><i class="fas fa-truck-medical"></i> Unidad Móvil: 24/7</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Centro de Especialidades Médicas PROMEDIKAL. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px; font-size: 12px;">Salud Ocupacional en Orellana - Especialistas al servicio de su empresa</p>
+    </div>
 </footer>
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/593962290243?text=Buenas%20tardes,%20deseo%20información%20sobre%20los%20servicios%20de%20PROMEDIKAL." 
-class="whatsapp-float" 
-target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+<!-- BOTÓN WHATSAPP FLOTANTE MEJORADO -->
+<a href="https://wa.me/593962290243?text=Buenas%20tardes,%20deseo%20información%20sobre%20los%20servicios%20de%20PROMEDIKAL" 
+   class="whatsapp-float" 
+   target="_blank"
+   aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
 </a>
 
+<script>
+// Script simple para manejar el envío del formulario (opcional)
+document.getElementById('form-contacto').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Gracias por contactarnos. Pronto nos comunicaremos con usted.');
+    this.reset();
+});
+</script>
 </body>
 </html>
