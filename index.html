@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centro de Especialidades Médicas PROMEDIKAL</title>
+
+<title>Salud Ocupacional en Orellana | Centro Médico PROMEDIKAL</title>
+
+<meta name="description" content="Centro de Especialidades Médicas PROMEDIKAL en Orellana. Servicios de salud ocupacional, exámenes pre ocupacionales, certificados médicos, laboratorio clínico y unidad móvil empresarial.">
 
 <style>
 
@@ -25,27 +28,30 @@ color:#333;
 background:white;
 }
 
+/* HEADER MÁS ELEGANTE */
+
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 8%;
+padding:20px 8%;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
 z-index:100;
+border-bottom:3px solid var(--verde);
 }
 
 header img{
-height:60px;
+height:95px;
 }
 
 nav a{
 margin-left:35px;
 text-decoration:none;
 color:var(--azul);
-font-weight:500;
+font-weight:600;
 position:relative;
 padding-bottom:5px;
 transition:0.3s;
@@ -66,6 +72,8 @@ nav a:hover::after{
 width:100%;
 }
 
+/* HERO */
+
 .hero{
 background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat;
 color:white;
@@ -81,7 +89,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(12,60,96,0.75);
+background:rgba(12,60,96,0.80);
 }
 
 .hero-contenido{
@@ -100,7 +108,7 @@ color:white;
 }
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 margin-bottom:15px;
 }
 
@@ -119,6 +127,8 @@ border-radius:30px;
 text-decoration:none;
 font-weight:bold;
 }
+
+/* SECCIONES */
 
 section{
 padding:70px 8%;
@@ -158,68 +168,30 @@ box-shadow:0 12px 30px rgba(0,0,0,0.15);
 border-top:4px solid var(--verde);
 }
 
-.btn-combo{
-background:var(--azul);
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-margin-top:15px;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn-combo:hover{
-background:var(--verde);
-}
-
-.modal{
-display:none;
-position:fixed;
-z-index:999;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.modal-content{
-background:white;
-margin:8% auto;
-padding:40px;
-width:90%;
-max-width:600px;
-border-radius:15px;
-}
-
-.modal-content ul{
-text-align:left;
-line-height:1.6;
-margin-bottom:25px;
-}
-
-.cerrar{
-float:right;
-font-size:28px;
-cursor:pointer;
-}
-
-.btn-wsp{
-background:var(--verde);
-color:white;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
+/* FOOTER */
 
 footer{
 background:var(--azul);
 color:white;
 text-align:center;
-padding:20px;
+padding:30px;
+line-height:1.6;
+}
+
+/* BOTÓN WHATSAPP FLOTANTE */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+z-index:999;
+}
+
+.whatsapp-float img{
+width:100%;
+height:100%;
 }
 
 </style>
@@ -230,7 +202,7 @@ padding:20px;
 <header>
 <div>
 <img src="logo.png" alt="PROMEDIKAL Logo">
-<div style="font-size:13px;color:var(--gris-oscuro);">
+<div style="font-size:14px;color:var(--gris-oscuro);font-weight:500;">
 Centro de Especialidades Médicas
 </div>
 </div>
@@ -304,60 +276,27 @@ Ver Paquetes Empresariales
 
 <section id="empresas" class="gris">
 <h2>Paquetes Empresariales de Salud Ocupacional</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Riesgo Musculoesquelético</h3>
-<button onclick="abrirModal('modal1')" class="btn-combo">
-Ver Detalle
-</button>
-</div>
-
-<div class="card">
-<h3>Riesgo Químico</h3>
-<button onclick="abrirModal('modal2')" class="btn-combo">
-Ver Detalle
-</button>
-</div>
-
-<div class="card">
-<h3>Riesgo Psicosocial</h3>
-<button onclick="abrirModal('modal3')" class="btn-combo">
-Ver Detalle
-</button>
-</div>
-
-</div>
+<p>Soluciones integrales para cumplimiento normativo empresarial.</p>
 </section>
 
 <section class="gris">
 <h2>Unidad Móvil Ambulatoria</h2>
-<p>Brindamos atención médica empresarial directamente en campo.</p>
+<p>Atención médica empresarial directamente en campo en Orellana y alrededores.</p>
 </section>
 
 <footer id="contacto">
-<p>Centro de Especialidades Médicas PROMEDIKAL</p>
-<p>Orellana - Ecuador</p>
+<p><strong>Centro de Especialidades Médicas PROMEDIKAL</strong></p>
+<p>Salud Ocupacional en Orellana - Ecuador</p>
+<p>Unidad Móvil Ambulatoria disponible</p>
 <p>WhatsApp: 593962290243</p>
 </footer>
 
-<script>
-function abrirModal(id){
-document.getElementById(id).style.display="block";
-}
-function cerrarModal(id){
-document.getElementById(id).style.display="none";
-}
-window.onclick=function(event){
-var modales=document.getElementsByClassName("modal");
-for(var i=0;i<modales.length;i++){
-if(event.target==modales[i]){
-modales[i].style.display="none";
-}
-}
-}
-</script>
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+<a href="https://wa.me/593962290243?text=Buenas%20tardes,%20deseo%20información%20sobre%20los%20servicios%20de%20PROMEDIKAL." 
+class="whatsapp-float" 
+target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
 
 </body>
 </html>
